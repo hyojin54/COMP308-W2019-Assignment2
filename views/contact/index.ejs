@@ -1,0 +1,55 @@
+<% include ../partials/header.ejs %>
+
+<!--
+File name: contact > index.ejs
+Student's name: Hyojin Kim
+Student's number: 300950009
+Date: February 16, 2019
+-->
+
+    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 font-italic">CONTACT</h1>
+            <p class="lead my-0">I can be reached at 647-674-0002 or via email at hkim222@my.centennialcollege.ca</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">  
+                <form method="POST" id="contactForm" name="contactForm">
+                    <fieldset class="form-group">
+                        <label for="">* First Name: </label>
+                        <input type="text" class="form-control" id="firstName" 
+                            name="firstName" placeholder="Enter first name" required autofocus>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="">* Last Name: </label>
+                        <input type="text" class="form-control" id="lastName" 
+                            name="lastName" placeholder="Enter last name" required autofocus>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="">* Contact Number: </label>
+                        <input type="text" class="form-control" id="contactNumber" 
+                            name="contactNumber" placeholder="Enter contact number" required>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="">* Email: </label>
+                        <input type="text" class="form-control" id="email" 
+                            name="email" placeholder="Enter email" required autofocus>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="">* Message: </label>
+                        <textarea class="form-control" id="message" 
+                            name="message" placeholder="Enter message" required autofocus></textarea>
+                    </fieldset>
+                    <fieldset class="form-group text-right">
+                        <input type="button" class="btn btn-success" value="SEND" onClick="javascript:sendContact();">
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+<% include ../partials/footer.ejs %>

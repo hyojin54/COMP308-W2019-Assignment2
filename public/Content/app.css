@@ -1,0 +1,9 @@
+/* 
+File name: app.css
+Student's name: Hyojin Kim
+Student's number: 300950009
+Date: February 16, 2019
+*/
+
+.wrap-aboutme {position:relative; background: #ccc; width:500px; margin:0 auto;}
+.wrap-aboutme > div {position:absolute;z-index:99; width:200px; height:200px;}
