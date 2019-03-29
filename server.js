@@ -11,8 +11,8 @@ Date: February 16, 2019
  * Module dependencies.
  */
 
-var app = require('./app');
-var debug = require('debug')('comp308-w2019-assignment1:server');
+var app = require('./server/config/app');
+var debug = require('debug')('comp308-w2019-assignment2:server');
 var http = require('http');
 
 /**
