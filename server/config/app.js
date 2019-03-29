@@ -47,9 +47,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-// route redirects
-app.use('/', indexRouter);
-
 // setup session
 app.use(session({
   secret: "SomeSessionSecret",
@@ -74,6 +71,9 @@ passport.use(User.createStrategy());
 // serialize and deserialize user info
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+// route redirects
+app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

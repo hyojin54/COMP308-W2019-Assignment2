@@ -28,6 +28,11 @@ Date: February 16, 2019
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
 
+                <!-- Authentication (display name) -->
+                <% if(typeof displayName == 'string' && displayName) { %>
+                    <li class="navbar-text"><i class="fa fa-lg fa-user"></i> Welcome, <%= displayName %></li>
+                <% } %>
+
                 <% if (title == "Home") { %>
                     <li class="nav-item active">
                 <% } else { %>                
@@ -71,6 +76,13 @@ Date: February 16, 2019
                 <% } %>
                         <a class="nav-link" href="/contact"><i class="fa fa-lg fa-phone-square"></i> Contact Me</a>
                     </li>
+
+                <!-- Authentication (login/logout buttons) -->
+                <% if(typeof displayName == 'string' && displayName) { %>
+                    <li class="nav-item"><a href="/logout" class="nav-link"><i class="fa fa-lg fa-sign-out"></i> Logout</a></li>
+                <% } else { %>
+                    <li class="nav-item"><a href="/login" class="nav-link"><i class="fa fa-lg fa-sign-in"></i> Login</a></li>
+                <% } %>
                 </ul>
             </div>
     </nav>
