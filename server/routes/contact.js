@@ -1,27 +1,25 @@
 let express = require('express');
 let router = express.Router();
-let mongoose = require('mongoose');
 
-// create a reference to the db schema
-let contact = require('../models/contact');
+let contactController = require('../controllers/contact');
 
 /* GET Contact List page - READ Operation */
-router.get('/', (req, res, next) =>{
-    contact.find((err, contactList) => {
-        if(err) {
-            return console.error(err);
-        }
-        else {
-            console.log(contactList);
+router.get('/', contactController.displayContactList);
 
-            /*
-            res.render('contacts/index', {
-                title: 'Contact List',
-                contactList: contactList
-            });
-            */
-        }
-    });
-});
+/* GET Route for the Add page 
+   this will display the Add page */
+router.get('/add', contactController.displayAddPage);
+
+/* POST Route for processing the Add page */
+router.post('/add', contactController.processAddPage);
+
+/* GET request - display the Edit page */
+router.get('/edit/:id', contactController.displayEditPage);
+
+/* POST request - Update the database with data from the Edit Page */
+router.post('/edit/:id', contactController.processEditPage);
+
+/* GET request to perform the delete action */
+router.get('/delete/:id', contactController.performDelete);
 
 module.exports = router;

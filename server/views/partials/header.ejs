@@ -77,6 +77,15 @@ Date: February 16, 2019
                         <a class="nav-link" href="/contact"><i class="fa fa-lg fa-phone-square"></i> Contact Me</a>
                     </li>
 
+
+                <% if (title == "Contact List") { %>
+                    <li class="nav-item active">
+                <% } else { %>                
+                    <li class="nav-item">
+                <% } %>
+                        <a class="nav-link" href="/contact-list"><i class="fa fa-lg fa-phone-square"></i> Contact List</a>
+                    </li>
+
                 <!-- Authentication (login/logout buttons) -->
                 <% if(typeof displayName == 'string' && displayName) { %>
                     <li class="nav-item"><a href="/logout" class="nav-link"><i class="fa fa-lg fa-sign-out"></i> Logout</a></li>
