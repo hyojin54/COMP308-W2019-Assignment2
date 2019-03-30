@@ -1,6 +1,8 @@
 let express = require('express');
 let router = express.Router();
 
+let jwt = require('jsonwebtoken');
+
 let contactController = require('../controllers/contact');
 
 /* GET Contact List page - READ Operation */
